@@ -1,6 +1,10 @@
 @import 'config';
 @import 'menu';
 
+:root {
+    --secondary-color: #ffdd00;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -26,6 +30,8 @@ h1, h2, h3 {
     }
 
     &.sm-heading {
+        color: var(--secondary-color);
+        //color: $secondary-color;
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
         background: rgba(lighten($primary-color, 2), 0.5);
@@ -46,7 +52,19 @@ header {
 }
 
 .text-secondary {
-    color: $secondary-color;
+    color: var(--secondary-color);
+    //color: $secondary-color;
+    cursor: pointer;
+/*
+    &.second {
+        $secondary-color: aqua !global;
+        color: $secondary-color;
+
+        &.third {
+        $secondary-color: red !global;
+            color: $secondary-color;
+        }
+    }*/
 }
 
 main {
@@ -60,7 +78,8 @@ main {
             padding: 0.4rem;
 
             &:hover {
-                color: $secondary-color;
+                color: var(--secondary-color);
+                //color: $secondary-color;
                 @include easeOut()
             }
         }

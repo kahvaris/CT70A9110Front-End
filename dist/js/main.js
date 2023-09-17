@@ -35,3 +35,30 @@ function toggleMenu() {
         showMenu = false;
     }
 }
+
+
+const textSecondary = document.querySelector('.text-secondary');
+const root = document.documentElement;
+//root.style.setProperty('--secondary-color', 'yellow');
+let currentColour = 1;
+
+textSecondary.addEventListener('click', toggleColour);
+
+function toggleColour() {
+    if(currentColour == 1) {
+        root.style.setProperty('--secondary-color', '#bdff00');
+        //textSecondary.classList.add('second');
+        currentColour = 2;
+    }
+    else if(currentColour == 2) {
+        root.style.setProperty('--secondary-color', '#a4a6ff');
+        //textSecondary.classList.add('third');
+        currentColour = 3;
+    }
+    else {
+        root.style.setProperty('--secondary-color', '#ffdd00');
+        //textSecondary.classList.remove('second');
+        //textSecondary.classList.remove('third');
+        currentColour = 1;
+    }
+}

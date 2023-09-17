@@ -20,6 +20,9 @@
     .menu-btn.close .menu-line:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px); }
 
+:root {
+  --secondary-color: #ffdd00; }
+
 * {
   box-sizing: border-box; }
 
@@ -50,6 +53,7 @@ h1, h2, h3 {
   h1.lg-heading, h2.lg-heading, h3.lg-heading {
     font-size: 6rem; }
   h1.sm-heading, h2.sm-heading, h3.sm-heading {
+    color: var(--secondary-color);
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(73, 73, 73, 0.5); }
@@ -64,7 +68,18 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: var(--secondary-color);
+  cursor: pointer;
+  /*
+    &.second {
+        $secondary-color: aqua !global;
+        color: $secondary-color;
+
+        &.third {
+        $secondary-color: red !global;
+            color: $secondary-color;
+        }
+    }*/ }
 
 main {
   padding: 4rem;
@@ -74,7 +89,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #eece1a;
+        color: var(--secondary-color);
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
