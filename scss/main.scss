@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'mobile';
 
 :root {
     --secondary-color: #ffdd00;
@@ -30,8 +31,6 @@ h1, h2, h3 {
     }
 
     &.sm-heading {
-        color: var(--secondary-color);
-        //color: $secondary-color;
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
         background: rgba(lighten($primary-color, 2), 0.5);
