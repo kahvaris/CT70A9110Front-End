@@ -7,7 +7,7 @@ const menuBranding = document.querySelector('.menu-branding');
 
 const navItems = document.querySelectorAll('.nav-item');
 
-// Set initial state of menu
+// Set initial state of menu 
 
 let showMenu = false;
 
@@ -46,7 +46,7 @@ textSecondary.addEventListener('click', toggleColour);
 
 function toggleColour() {
     if(currentColour == 1) {
-        root.style.setProperty('--secondary-color', '#bdff00');
+        root.style.setProperty('--secondary-color', '#efaebf');
         //textSecondary.classList.add('second');
         currentColour = 2;
     }
