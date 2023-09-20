@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "portfolio kurssityo",
   "main": "index.js",
+  "homepage": "https://kahvaris.github.io/portfoliopage",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gh-pages": "^6.0.0",
     "node-sass": "^9.0.0"
   }
 }
