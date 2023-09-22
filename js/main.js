@@ -40,20 +40,20 @@ function toggleMenu() {
 const textSecondary = document.querySelector('.text-secondary');
 const root = document.documentElement;
 
-let currentColour = localStorage.getItem('secondaryColor') || '#ffdd00';
+let currentColour = localStorage.getItem('secondaryColor') || '#FFB400';
 root.style.setProperty('--secondary-color', currentColour);
 
 textSecondary.addEventListener('click', toggleColour);
 
 function toggleColour() {
-    if(currentColour == '#ffdd00') {
-        currentColour = '#a4a6ff';
+    if(currentColour == '#FFB400') {
+        currentColour = '#B6D464';
     }
-    else if(currentColour == '#a4a6ff') {
-        currentColour = '#efaebf';
+    else if(currentColour == '#B6D464') {
+        currentColour = '#8CD2DA';
     }
     else {
-        currentColour = '#ffdd00';
+        currentColour = '#FFB400';
     }
 
     localStorage.setItem('secondaryColor', currentColour);
