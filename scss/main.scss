@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'blog';
 
 :root {
     --secondary-color: #ffdd00;
@@ -249,7 +250,7 @@ main {
 }
 
 .pimg3 {
-    background-image: url('../img/pexels-pixabay-207456.jpg');
+    background-image: url('../img/pexels-tranmautritam-326515.jpg');
     min-height: 300px;
 }
 
@@ -303,12 +304,14 @@ main {
             margin-bottom: 1rem;
             margin-left: 1rem;
             text-align: left;
+            font-size: 1.5rem;
         }
         .date {
             text-align: right;
             margin: 0.3rem 1rem 1rem 0;
-            font-weight: 500;
-            font-size: 0.8rem;
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--secondary-color);
         }
     }
 
@@ -316,6 +319,8 @@ main {
         margin-left: 1rem;
         margin-right: 1rem;
         text-align: left;
+        max-height: 3rem;
+        overflow: hidden;
     }
     img {
         width: 100%;
