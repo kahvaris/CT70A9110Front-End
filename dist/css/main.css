@@ -92,6 +92,9 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+.nav-item:nth-child(5) {
+  transition-delay: 0.5s; }
+
 :root {
   --secondary-color: #ffdd00; }
 
@@ -249,14 +252,14 @@ main {
   color: white;
   height: 60px; }
 
-.pimg1, .pimg2, .pimg3 {
+.pimg1, .pimg2, .pimg3, .pimg4 {
   border-top: solid 5px #444;
   position: relative;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; }
-  .pimg1:before, .pimg2:before, .pimg3:before {
+  .pimg1:before, .pimg2:before, .pimg3:before, .pimg4:before {
     content: '';
     position: absolute;
     top: 0;
@@ -278,6 +281,10 @@ main {
   background-image: url("../img/pexels-pixabay-207456.jpg");
   min-height: 300px; }
 
+.pimg4 {
+  background-image: url("../img/pexels-pixabay-207456.jpg");
+  min-height: 300px; }
+
 .ptext {
   position: absolute;
   top: 40%;
@@ -294,13 +301,53 @@ main {
       color: var(--secondary-color);
       transition: all 0.5s ease-out; }
 
+.blogs {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .blogs .blog {
+    border-bottom: var(--secondary-color) 3px solid;
+    background-color: #303030;
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+  .blogs .blog-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr; }
+    .blogs .blog-header .blog-head {
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+      text-align: left; }
+    .blogs .blog-header .date {
+      text-align: right;
+      margin: 0.3rem 1rem 1rem 0;
+      font-weight: 500;
+      font-size: 0.8rem; }
+  .blogs p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: left; }
+  .blogs img {
+    width: 100%; }
+  .blogs .btn-blog {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-weight: 200; }
+    .blogs .btn-blog:hover {
+      color: var(--secondary-color);
+      transition: all 0.5s ease-out; }
+
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+  .blogs {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  .blogs {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -329,7 +376,9 @@ main {
     grid-template-areas: 'bioimage' 'bio'  'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  .blogs {
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
   main {
@@ -340,4 +389,6 @@ main {
       margin-top: 1rem;
       font-size: 4rem; }
   .projects {
+    grid-template-columns: 1fr; }
+  .blogs {
     grid-template-columns: 1fr; } }
