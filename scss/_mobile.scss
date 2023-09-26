@@ -74,6 +74,16 @@
     .blogs {
         grid-template-columns: 1fr;
     }
+
+    .post {
+        &.show {
+            .post-main {
+                width: 370px;
+                left: 0;
+                margin: auto;
+            }
+        }
+    }
 }
 
 // Smartphones
@@ -92,10 +102,6 @@
 
     
     .projects {
-        grid-template-columns: 1fr;
-    }
-
-    .blogs {
         grid-template-columns: 1fr;
     }
 }

@@ -10,75 +10,94 @@
     overflow: hidden;
     background: rgba(darken($primary-color, 5), 0.7);
 
+    opacity: 0;
+    transition: all 0.2s ease-out;
     visibility: hidden;
 
     &.show {
         visibility: visible;
+        opacity: 100;
 
-        .post-main {
-            position: fixed;
-            left: 25%;
-            top: 10vh;
-            width: 50%;
-            height: 80%;
-            padding: 1.5rem;
-            background-color: darken($primary-color, 15);
-        
-            .post-head {
-                display: grid;
-                grid-template-columns: 2fr 1fr;  
-            
-                .post-header {
-                    margin-bottom: 1rem;
-                    margin-left: 1rem;
-                    text-align: left;
-                    font-size: 2rem;
-                }
-                .post-date {
-                    text-align: right;
-                    margin: 0.5rem 1rem 1rem 0;
-                    font-weight: 400;
-                    font-size: 1.2rem;
-                    color: var(--secondary-color);
-                }
-            }
-            .post-text {
-                margin-left: 1rem;
-                margin-right: 1rem;
-                text-align: left;
-            }
-        }
     }
-
-    .post-btn {
-        position: fixed;
-        z-index: 3;
-        right: 17vh;
-        top: 12vh;
-        cursor: pointer;
-        @include easeOut;
-        visibility: hidden;
+    .post-main {
+        position: relative;
+        left: 25%;
+        top: 10vh;
+        width: 50%;
+        height: 80%;
+        padding: 1.5rem;
+        background-color: darken($primary-color, 13);
+        overflow: auto;
     
-        .post-line {
-            width: 28px;
-            height: 3px;
-            margin: 0 0 5px 0;
-            background: set-text-color($primary-color);
-            @include easeOut;
+        .post-head {
+            display: grid;
+            grid-template-columns: 2fr 1fr;  
+            border-bottom: var(--secondary-color) 2px solid;
+            margin-top: 2.7rem;
+            padding-bottom: 1rem;
+        
+            .post-header {
+                margin-left: 1rem;
+                text-align: left;
+                font-size: 2rem;
+            }
+            .post-date {
+                text-align: right;
+                margin: 0.5rem 1rem 1rem 0;
+                font-weight: 400;
+                font-size: 1.1rem;
+                color: var(--secondary-color);
+            }
         }
-    
-        &.close {
-            transform: rotate(180deg);
-            visibility: visible;
-    
+        .post-text {
+            margin: 0 1rem 1rem 1rem;
+            text-align: left;
+        }
+
+        .wrap {
+            position: absolute;
+            height: 2.5rem;
+            width: 2.5rem;
+            right: 1rem;
+            top: 1rem;
+        }
+
+
+        .post-btn {
+            position: fixed;
+            z-index: 4;
+            cursor: pointer;
+            background: lighten($primary-color, 10);
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 50%;
+            @include easeOut;
+            visibility: hidden;
+            &:hover {
+                background: lighten($primary-color, 3);
+                @include easeOut()
+            }
+        
             .post-line {
-                // Line 1- rotate
-                &:nth-child(1) {
-                    transform: rotate(45deg) translate(5px, 5px);
-                }
-                // Line 2- rotate
-                &:nth-child(2) {
-                    transform: rotate(-45deg) translate(2px, -1px);
+                width: 28px;
+                height: 3px;
+                margin: 0 0 5px 0;
+                background: set-text-color($primary-color);
+                @include easeOut;
+            }
+        
+            &.close {
+                transform: rotate(180deg);
+                visibility: visible;
+                .post-line {
+                    // Line 1- rotate
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate(17px, 8px);
+                    }
+                    // Line 2- rotate
+                    &:nth-child(2) {
+                        transform: rotate(-45deg) translate(-3px, 10px);
+                    }
                 }
             }
         }

@@ -104,56 +104,72 @@
   height: 100vh;
   overflow: hidden;
   background: rgba(55, 55, 55, 0.7);
+  opacity: 0;
+  transition: all 0.2s ease-out;
   visibility: hidden; }
   .post.show {
-    visibility: visible; }
-    .post.show .post-main {
-      position: fixed;
-      left: 25%;
-      top: 10vh;
-      width: 50%;
-      height: 80%;
-      padding: 1.5rem;
-      background-color: #1e1e1e; }
-      .post.show .post-main .post-head {
-        display: grid;
-        grid-template-columns: 2fr 1fr; }
-        .post.show .post-main .post-head .post-header {
-          margin-bottom: 1rem;
-          margin-left: 1rem;
-          text-align: left;
-          font-size: 2rem; }
-        .post.show .post-main .post-head .post-date {
-          text-align: right;
-          margin: 0.5rem 1rem 1rem 0;
-          font-weight: 400;
-          font-size: 1.2rem;
-          color: var(--secondary-color); }
-      .post.show .post-main .post-text {
+    visibility: visible;
+    opacity: 100; }
+  .post .post-main {
+    position: relative;
+    left: 25%;
+    top: 10vh;
+    width: 50%;
+    height: 80%;
+    padding: 1.5rem;
+    background-color: #232323;
+    overflow: auto; }
+    .post .post-main .post-head {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      border-bottom: var(--secondary-color) 2px solid;
+      margin-top: 2.7rem;
+      padding-bottom: 1rem; }
+      .post .post-main .post-head .post-header {
         margin-left: 1rem;
-        margin-right: 1rem;
-        text-align: left; }
-  .post .post-btn {
-    position: fixed;
-    z-index: 3;
-    right: 17vh;
-    top: 12vh;
-    cursor: pointer;
-    transition: all 0.5s ease-out;
-    visibility: hidden; }
-    .post .post-btn .post-line {
-      width: 28px;
-      height: 3px;
-      margin: 0 0 5px 0;
-      background: white;
-      transition: all 0.5s ease-out; }
-    .post .post-btn.close {
-      transform: rotate(180deg);
-      visibility: visible; }
-      .post .post-btn.close .post-line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px); }
-      .post .post-btn.close .post-line:nth-child(2) {
-        transform: rotate(-45deg) translate(2px, -1px); }
+        text-align: left;
+        font-size: 2rem; }
+      .post .post-main .post-head .post-date {
+        text-align: right;
+        margin: 0.5rem 1rem 1rem 0;
+        font-weight: 400;
+        font-size: 1.1rem;
+        color: var(--secondary-color); }
+    .post .post-main .post-text {
+      margin: 0 1rem 1rem 1rem;
+      text-align: left; }
+    .post .post-main .wrap {
+      position: absolute;
+      height: 2.5rem;
+      width: 2.5rem;
+      right: 1rem;
+      top: 1rem; }
+    .post .post-main .post-btn {
+      position: fixed;
+      z-index: 4;
+      cursor: pointer;
+      background: #5e5e5e;
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 50%;
+      transition: all 0.5s ease-out;
+      visibility: hidden; }
+      .post .post-main .post-btn:hover {
+        background: #4c4c4c;
+        transition: all 0.5s ease-out; }
+      .post .post-main .post-btn .post-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: white;
+        transition: all 0.5s ease-out; }
+      .post .post-main .post-btn.close {
+        transform: rotate(180deg);
+        visibility: visible; }
+        .post .post-main .post-btn.close .post-line:nth-child(1) {
+          transform: rotate(45deg) translate(17px, 8px); }
+        .post .post-main .post-btn.close .post-line:nth-child(2) {
+          transform: rotate(-45deg) translate(-3px, 10px); }
 
 :root {
   --secondary-color: #ffdd00; }
@@ -442,7 +458,11 @@ main {
   .projects {
     grid-template-columns: repeat(2, 1fr); }
   .blogs {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .post.show .post-main {
+    width: 370px;
+    left: 0;
+    margin: auto; } }
 
 @media screen and (max-width: 500px) {
   main {
@@ -453,6 +473,4 @@ main {
       margin-top: 1rem;
       font-size: 4rem; }
   .projects {
-    grid-template-columns: 1fr; }
-  .blogs {
     grid-template-columns: 1fr; } }
