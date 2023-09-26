@@ -37,6 +37,8 @@ function toggleMenu() {
 }
 
 
+// Secondary colour change
+
 const textSecondary = document.querySelector('.text-secondary');
 const root = document.documentElement;
 
@@ -58,4 +60,49 @@ function toggleColour() {
 
     localStorage.setItem('secondaryColor', currentColour);
     root.style.setProperty('--secondary-color', currentColour);
+}
+
+
+
+const post = document.querySelector('.post');
+const blogBtn = document.querySelector('.post-btn');
+
+const buttons = document.querySelectorAll('.btn-blog');
+
+buttons.forEach(button => {
+    button.addEventListener('click', showBlog)
+});
+
+function showBlog(event) {
+    const parentElement = event.target.parentElement;
+
+    const blogHeader = parentElement.querySelector('.blog-header');
+    const date = blogHeader.querySelector('.date');
+    const blogHead = blogHeader.querySelector('.blog-head');
+
+    const blogText = parentElement.querySelector('.blog-text');
+
+    const bhContent = blogHead.textContent;
+    const dateContent = date.textContent;
+    const tContent = blogText.textContent;
+
+    const postHead = document.querySelector('.post-header');
+    postHead.textContent = bhContent;
+
+    const postDate = document.querySelector('.post-date');
+    postDate.textContent = dateContent;
+
+    const postText = document.querySelector('.post-text');
+    postText.textContent = tContent;
+
+    post.classList.add('show');
+    blogBtn.classList.add('close');
+}
+
+
+blogBtn.addEventListener('click', hideBlog);
+
+function hideBlog() {
+    blogBtn.classList.remove('close');
+    post.classList.remove('show');
 }
